@@ -2,7 +2,11 @@
 
 This Weather App is a React-based application that provides real-time weather information and a 5-day forecast for any city, using the OpenWeatherMap API.
 
-## Getting Started
+## Online Demo
+
+Access a live version of the app: [Live Demo](https://weather-a1cf4.web.app/)
+
+## Run app locally
 
 Before running the app, you'll need to obtain an API key from OpenWeatherMap and set it up in the project.
 
@@ -47,6 +51,6 @@ This runs the app in development mode. Open [http://localhost:3000](http://local
 - Animations are provided from LottieFiles by jochang.
   [Weather animations](https://lottiefiles.com/vdr0uy2wwsoljqtc).
 
-Icons are provided from Flaticon by Freepik & Royyan Wijaya.
+- Icons are provided from Flaticon by Freepik & Royyan Wijaya.
 [Search](https://www.flaticon.com/free-icon/search_3031293?term=search&page=1&position=4&origin=search&related_id=3031293)
 [Location](https://www.flaticon.com/free-icon/location_1008001?term=location&page=1&position=35&origin=search&related_id=1008001)
