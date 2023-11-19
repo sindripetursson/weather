@@ -1,0 +1,339 @@
+h1,
+h2,
+p {
+	margin-block-start: 0px;
+	margin-block-end: 0px;
+	color: var(--text-color);
+}
+
+.weatherComponent {
+	background-color: var(--background-color);
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.container {
+	background-color: var(--primary-color);
+	border-radius: 30px;
+	margin: 10px 40px;
+	padding: 30px 10px;
+	min-height: 210px;
+}
+
+/* Search */
+button {
+	background-color: var(--primary-color);
+	border: 2px solid var(--secondary-color);
+	padding: 10px 20px;
+	margin: 4px 10px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	border-radius: 30px;
+}
+
+button > img {
+	width: 20px;
+	height: 20px;
+}
+
+input {
+	background-color: var(--primary-color);
+	border: 2px solid var(--secondary-color);
+	color: var(--secondary-color);
+	font-size: var(--font-size-small);
+	padding: 10px 20px;
+	margin: 4px 10px;
+	border-radius: 30px;
+	outline: none;
+}
+
+input::placeholder {
+	color: var(--secondary-color);
+}
+
+.searchContainer {
+	position: absolute;
+	z-index: 1;
+	right: 0;
+	top: 0;
+	display: flex;
+	margin: 10px 40px;
+	height: 75px;
+}
+
+.searchContainer > div {
+	align-items: center;
+	display: flex;
+}
+
+.errorMessage {
+	color: red;
+	font-size: var(--font-size-small);
+	margin-right: 10px;
+}
+
+.loadingIcon {
+	width: 50px;
+}
+
+/* Today */
+.today {
+	display: flex;
+}
+
+.todayCity,
+.todayInfo {
+	flex: 0.5;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.todayInfo > div {
+	display: flex;
+	align-items: center;
+	margin: 15px 0px;
+}
+
+.infoItem {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.dayDate > h2 {
+	font-size: var(--font-size-large);
+}
+
+.dayLocation > h1 {
+	font-size: var(--font-size-xlarge);
+	text-transform: capitalize;
+}
+
+.dayLocation > h2 {
+	font-size: var(--font-size-regular);
+	text-transform: capitalize;
+}
+
+.measurementIcon {
+	padding: 20px;
+	width: 50px;
+	height: 50px;
+}
+
+.infoItem > :first-child {
+	font-size: var(--font-size-regular);
+}
+
+.infoItem > :nth-child(2) {
+	font-size: var(--font-size-small);
+}
+
+.todayIcon {
+	position: absolute;
+	z-index: 0;
+	width: 150px;
+}
+
+/* Forecast */
+.forecastContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.eachDay {
+	padding: 5px;
+	flex: 1;
+}
+
+.eachDayDate > h2 {
+	font-size: var(--font-size-regular);
+}
+
+.eachDayWeather,
+.eachDayMesurement {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px 0px;
+}
+
+.eachDayInfo {
+	flex: 0.3;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+}
+
+.eachDayInfo > :first-child {
+	font-size: var(--font-size-small);
+}
+
+.eachDayInfo > :nth-child(2) {
+	font-size: var(--font-size-xsmall);
+}
+
+.forecastIcon {
+	width: 70px;
+}
+
+/* Smaller screens */
+@media screen and (min-width: 1401px) {
+	/*Remove default forecast borders */
+	.eachDay:not(:last-child) {
+		border-right: 3px solid var(--secondary-color);
+	}
+}
+@media screen and (max-width: 1400px) {
+	/*Make empty containers fill up screen*/
+	.container {
+		min-height: 330px;
+	}
+}
+
+@media screen and (max-width: 1400px) and (min-width: 1001px) {
+	/*Change forecast layout to 2x3*/
+	.eachDay {
+		flex: 0 0 calc(32%);
+	}
+
+	.eachDay:nth-child(1),
+	.eachDay:nth-child(2),
+	.eachDay:nth-child(3) {
+		margin-bottom: 30px;
+	}
+
+	.eachDay:not(:last-child):not(:nth-child(3)) {
+		border-right: 3px solid var(--secondary-color);
+	}
+}
+
+@media screen and (max-width: 1000px) and (min-width: 426px) {
+	/*Change forecast layout to 3x2*/
+	.eachDay {
+		flex: 0 0 calc(47%);
+	}
+
+	.eachDay:nth-child(1),
+	.eachDay:nth-child(2),
+	.eachDay:nth-child(3),
+	.eachDay:nth-child(4) {
+		margin-bottom: 15px;
+	}
+
+	.eachDay:not(:last-child):not(:nth-child(2)):not(:nth-child(4)) {
+		border-right: 3px solid var(--secondary-color);
+	}
+}
+
+@media screen and (max-width: 680px) {
+	/* Day */
+	.dayDate > h2 {
+		font-size: var(--font-size-regular);
+	}
+
+	.dayLocation > h1 {
+		font-size: var(--font-size-large);
+	}
+
+	.dayLocation > h2 {
+		font-size: var(--font-size-small);
+	}
+
+	.todayIcon {
+		width: 100px;
+	}
+
+	.infoItem > :first-child {
+		font-size: var(--font-size-small);
+	}
+
+	.infoItem > :nth-child(2) {
+		font-size: var(--font-size-xsmall);
+	}
+
+	/* Forecast */
+	.eachDayDate > h2 {
+		font-size: var(--font-size-small);
+	}
+
+	.eachDayInfo > :first-child {
+		font-size: var(--font-size-xsmall);
+	}
+
+	.eachDayInfo > :nth-child(2) {
+		font-size: var(--font-size-xxsmall);
+	}
+
+	input {
+		width: 30vw;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	/*Very small screen - Change forecast layout to 6x1 and no borders*/
+	.dayDate > h2 {
+		font-size: var(--font-size-small);
+	}
+
+	.eachDay {
+		flex: 0 0 calc(99%);
+	}
+
+	.eachDay:nth-child(1),
+	.eachDay:nth-child(2),
+	.eachDay:nth-child(3),
+	.eachDay:nth-child(4) {
+		margin-bottom: 10px;
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	/*Change day container for smaller screens*/
+	.dayContainer {
+		margin-top: 80px;
+	}
+
+	.todayCity {
+		margin-bottom: 30px;
+	}
+
+	.weatherComponent {
+		height: 100%;
+	}
+
+	.today {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	/* Smaller container for mobile */
+	.container,
+	.searchContainer {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	.errorMessage {
+		position: absolute;
+		font-size: var(--font-size-xxsmall);
+		top: -10px;
+		right: 0px;
+	}
+}
+
+/* For NightMode */
+
+.NMBackground {
+	background-color: var(--night-background-color);
+}
+
+.NMPrimary {
+	background-color: var(--night-primary-color);
+}
