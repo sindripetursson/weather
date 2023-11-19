@@ -26,8 +26,8 @@ Replace `Your_OpenWeatherMap_API_Key` with the API key you obtained from OpenWea
 ### Running the App
 
 In the project directory, run:
-npm install
-npm start
+- npm install
+- npm start
 
 This runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
